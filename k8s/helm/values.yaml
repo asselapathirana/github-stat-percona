@@ -67,18 +67,18 @@ resources:
       cpu: "600m"
   load:
     requests:
-      memory: "3Gi"
-      cpu: "4"
+      memory: "2Gi"
+      cpu: "800m"
     limits:
       memory: "3Gi"
-      cpu: "4"
+      cpu: "1"
   valkey:
     requests:
       memory: "2Gi"
-      cpu: "1"
+      cpu: "500m"
     limits:
       memory: "2Gi"
-      cpu: "1"
+      cpu: "500m"
 
 # Configurations for different instances
 separateLoads: false
