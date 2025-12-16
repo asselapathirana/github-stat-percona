@@ -43,10 +43,22 @@ images:
     tag: "8"
 
 controlPanelService:
-  type: LoadBalancer  # LoadBalancer or NodePort 
+  type: LoadBalancer  # LoadBalancer or NodePort
   nodePort: 3000
   port: 80
   targetPort: 3000 # controlPanelPort - CONTROL_PANEL_PORT
+
+# Ingress is disabled by default to keep the chart generic. Override per environment.
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
 
 useResourceLimits: true
 
